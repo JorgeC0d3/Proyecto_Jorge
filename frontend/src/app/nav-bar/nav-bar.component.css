@@ -1,0 +1,9 @@
+.link{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.link:hover{
+    color: #646464;
+}
