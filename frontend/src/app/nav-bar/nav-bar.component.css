@@ -7,3 +7,13 @@
 .link:hover{
     color: #646464;
 }
+
+.link-component{
+    text-decoration: none;
+    color: #000;
+}
+
+.link-component:hover{
+    color: #494949;
+    cursor: pointer;
+}
