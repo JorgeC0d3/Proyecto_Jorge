@@ -17,6 +17,15 @@ db.serialize(() =>{
         description VARCHAR(2000),
         created_at DATETIME
     )`)
+
+    db.run(`CREATE TABLE IF NOT EXISTS users (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        name VARCHAR(50),
+        surnames VARCHAR(100),
+        email VARCHAR(100),
+        password VARCHAR(100),
+        created_at DATETIME
+        )`)
 })
 
 export default db;
