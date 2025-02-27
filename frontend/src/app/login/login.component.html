@@ -1,0 +1,15 @@
+<div class="d-flex m-0 vh-100 justify-content-center align-items-center">
+    <div class="card">
+        <div class="card-body">
+            <h5 class="mb-3 text-center">Accede a la aplicación</h5>
+            <form>
+                <label for="email">Email</label>
+                <input type="email" class="form-control mb-3" [(ngModel)]="email" name="email">
+                <label for="email">Contraseña</label>
+                <input type="password" class="form-control mb-3" [(ngModel)]="password" name="password">
+                <button type="submit" class="btn btn-primary w-100">Acceder</button>
+            </form>
+            <p class="text-center mt-3">Si no tienes un usuario <a routerLink="/signup">Regístrate</a></p>
+        </div>
+    </div>
+</div>
