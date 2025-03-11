@@ -2,7 +2,7 @@
     <div class="card">
         <div class="card-body">
             <h5 class="mb-3 text-center">Accede a la aplicación</h5>
-            <form>
+            <form (ngSubmit)="signin()">
                 <label for="email">Email</label>
                 <input type="email" class="form-control mb-3" [(ngModel)]="email" name="email">
                 <label for="email">Contraseña</label>
@@ -10,6 +10,62 @@
                 <button type="submit" class="btn btn-primary w-100">Acceder</button>
             </form>
             <p class="text-center mt-3">Si no tienes un usuario <a routerLink="/signup">Regístrate</a></p>
+        </div>
+    </div>
+</div>
+
+<!-- Error Toast -->
+
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="toast-error" class="toast align-items-center justify-content-center text-white bg-danger border-0"
+        role="alert" ari-live="assertive" aria-atomic="true">
+        <div class="d-flex">
+            <div class="toast-body">
+                Error al intentar acceder, inténtalo más tarde
+            </div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+        </div>
+    </div>
+</div>
+
+<!-- Success Toast -->
+
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="toast-success" class="toast align-items-center justify-content-center text-white bg-success border-0"
+        role="alert" ari-live="assertive" aria-atomic="true">
+        <div class="d-flex">
+            <div class="toast-body">
+                Redirigiendo...
+            </div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+        </div>
+    </div>
+</div>
+
+<!-- Warning Toast -->
+
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="toast-warning" class="toast align-items-center justify-content-center text-white bg-info border-0"
+        role="alert" ari-live="assertive" aria-atomic="true">
+        <div class="d-flex">
+            <div class="toast-body">
+                Contraseña incorrecta
+            </div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+    </div>
+</div>
+
+<!-- Info Toast -->
+
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="toast-info" class="toast align-items-center justify-content-center text-white bg-danger border-0"
+        role="alert" ari-live="assertive" aria-atomic="true">
+        <div class="d-flex">
+            <div class="toast-body">
+                Usuario no encontrado            
+            </div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
         </div>
     </div>
 </div>

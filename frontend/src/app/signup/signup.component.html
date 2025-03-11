@@ -2,7 +2,7 @@
     <div class="card">
         <div class="card-body">
             <h5 class="mb-3 text-center">Regístrate</h5>
-            <form>
+            <form (ngSubmit)="signup()">
                 <label for="name">Nombre</label>
                 <input type="text" class="form-control mb-3" [(ngModel)]="name" name="name">
                 <label for="name">Apellidos</label>
@@ -17,3 +17,59 @@
         </div>
     </div>
 </div>
+
+    <!-- Error Toast -->
+
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="toast-error" class="toast align-items-center justify-content-center text-white bg-danger border-0"
+            role="alert" ari-live="assertive" aria-atomic="true">
+            <div class="d-flex">
+                <div class="toast-body">
+                    Error al crear el usuario
+                </div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Toast -->
+
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="toast-success" class="toast align-items-center justify-content-center text-white bg-success border-0"
+            role="alert" ari-live="assertive" aria-atomic="true">
+            <div class="d-flex">
+                <div class="toast-body">
+                    Usuario creado con éxito!
+                </div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Warning Toast -->
+
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="toast-warning" class="toast align-items-center justify-content-center text-white bg-info border-0"
+            role="alert" ari-live="assertive" aria-atomic="true">
+            <div class="d-flex">
+                <div class="toast-body">
+                    Existen campos por completar...
+                </div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Info Toast -->
+
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="toast-info" class="toast align-items-center justify-content-center text-white bg-danger border-0"
+            role="alert" ari-live="assertive" aria-atomic="true">
+            <div class="d-flex">
+                <div class="toast-body">
+                    El usuario ya existe
+                </div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+        </div>
+    </div>
