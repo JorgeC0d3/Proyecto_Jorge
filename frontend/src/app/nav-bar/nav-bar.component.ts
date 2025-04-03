@@ -15,8 +15,8 @@ export class NavBarComponent {
 
   constructor(public router: Router){}
 
-  ngOnInit(){
-    this.user = JSON.parse(localStorage.getItem('user') || '');
+  ngOnInit(): void {
+      this.user = JSON.parse(localStorage.getItem('user') || '{}');
   }
 
   logout(){

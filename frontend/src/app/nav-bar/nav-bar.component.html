@@ -1,11 +1,11 @@
-<div class="border-bottom border-light mb-4 bg-light" *ngIf="router.url !== '/' && router.url !== '/signup'">
+<div class="border-bottom border-light mb-4 bg-light">
     <div class="container py-2 d-flex justify-content-between algin-items-center">
 
         <a routerLink="/dashboard" class="d-flex mx-3 link">TASKS APP</a>
 
         <div class="d-flex justify-content-center algin-items-center">
             <a routerLink="/new-task" class="mx-3 link-component">Nueva tarea</a>
-            <span class="mx-3">Hola {{user.name}}!</span>
+            <a class="mx-3" routerLink="/user-profile">Hola, {{user.name}}!</a>
             <span id="logout" (click)="logout()">Salir</span>
         </div>
 

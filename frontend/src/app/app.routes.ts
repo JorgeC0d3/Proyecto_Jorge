@@ -33,6 +33,12 @@ export const routes: Routes = [
                 loadComponent: () =>
                     import('./mod-task/mod-task.component').then(m => m.ModTaskComponent),
                 canActivate: [AuthGuard]
+            },
+            {
+                path: 'user-profile',
+                loadComponent: () =>
+                    import('./user-profile/user-profile.component').then(m => m.UserProfileComponent),
+                canActivate: [AuthGuard]
             }
         ]
     },
