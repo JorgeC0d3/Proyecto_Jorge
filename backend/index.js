@@ -210,6 +210,39 @@ app.post('/api/login/', (req, res) => {
     }
 })
 
+
+//Función para modificar la contraseña del usuario
+app.put('/api/change-password/', async (req, res) => {
+    const { email, newPassword } = req.body;
+
+    if (email === '' || newPassword === '') {
+        return res.status(400).json({ status: '400', message: 'Credenciales incompletas' });
+    }
+
+    //Comprobamos que existe el usuario
+    const query = 'SELECT * FROM users WHERE email = ?';
+    db.get(query, [email], async (error, user) => {
+        if (error || !user) {
+            return res.status(400).json({ message: 'Usuario no encontrado' });
+        }
+    })
+
+    //Si todo es correcto procedemos a encriptar la contraseña:
+    const salt = await bcrypt.genSalt(10);
+    const encryptPass = await bcrypt.hash(newPassword, salt);
+
+    const modQuery = 'UPDATE users SET password = ? WHERE email = ?';
+    db.put(modQuery, [encryptPass, email], function (error) {
+        if (error) {
+            return res.status(500).json({ message: 'Ocurrió un error al intentar modificar la contraseña' });
+        }
+
+        return res.status(200).json({ message: 'Contraseña actualizada correctamente!' });
+    })
+
+})
+
+
 //lanzamos la aplicación
 app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);
